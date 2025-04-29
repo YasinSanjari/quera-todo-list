@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* declaring fonts */
+
+@font-face {
+  font-family: "iran-yekan";
+  src: url("../assets/Fonts/IranYekan/IRANYekanWebBold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "iran-yekan";
+  src: url("../assets/Fonts/IranYekan/IRANYekanWebMedium.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "iran-yekan";
+  src: url("../assets/Fonts/IranYekan/IRANYekanWebLight.woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "iran-yekan";
+  src: url("../assets/Fonts/IranYekan/IRANYekanWebThin.woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "morabba";
+  src: url("../assets/Fonts/Morabba/Morabba-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "morabba";
+  src: url("../assets/Fonts/Morabba/Morabba-Medium.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "morabba";
+  src: url("../assets/Fonts/Morabba/Morabba-Light.woff2");
+  font-weight: 300;
+}
+
+@theme {
+  /* light colors */
+
+  --color-primary: #007bff;
+  --color-title-light: #242424;
+  --color-task-description-light: #727272;
+  --color-navbar-text-light: #525252;
+  --color-date-color-light: #7d7d7f;
+  --color-taskdone-text-light: #323233;
+  --color-task-creation-description-light: #afaeb2;
+
+  --color-background-light: #f7f7f7;
+  --color-task-border-light: #e9e9e9;
+  --color-background-navbar-light: #f5faff;
+
+  --color-priority-high-background-light: #ffe2db;
+  --color-priority-high-text-light: #ff5f37;
+  --color-priority-mid-background-light: ##ffefd6;
+  --color-priority-mid-text-light: #ffaf37;
+  --color-priority-low-background-light: #c3fff1;
+  --color-priority-low-text-light: #11a483;
+
+  /* dark colors */
+
+  --color-title-dark: #ffffff;
+  --color-task-description-dark: #848890;
+  --color-navbar-text-dark: #ffffff;
+  --color-date-color-dark: #848890;
+  --color-taskdone-text-dark: #ffffff;
+
+  --color-background-buttons-dark: #041933;
+  --color-background-navbar-dark: #091120;
+  --color-background-dark: #060c18;
+
+  --color-priority-high-background-dark: #3d2327;
+  --color-priority-high-text-dark: #ff5f37;
+  --color-priority-mid-background-dark: #302f2d;
+  --color-priority-mid-text-dark: #ffaf37;
+  --color-priority-low-background-dark: #233332;
+  --color-priority-low-text-dark: #02e1a2;
+
+  /* fonts */
+
+  --font-iranYekan: "iran-yekan";
+  --font-morabba: "morabba";
+}
