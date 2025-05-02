@@ -89,4 +89,15 @@
 
   --font-iranYekan: "iran-yekan";
   --font-morabba: "morabba";
+
+  /* shadows */
+
+  --shadow-67:
+    rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+@layer components {
+  .add-task-btn {
+    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4;
+  }
 }

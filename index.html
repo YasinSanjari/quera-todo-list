@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -6,5 +6,27 @@
     <title>کوئرا لیست</title>
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body></body>
+  <body class="p-4">
+    <!-- dont forget this styles -->
+    <div class="done__container add-task-btn text-[14px] md:text-[16px]">
+      <img src="./assets/images/add.png" class="h-6 w-6" />
+      <span>افزودن وظیفه جدید</span>
+    </div>
+
+    <div
+      class="add__task__input border-task-border-light shadow-67 mt-8 flex flex-col rounded-xl border p-4"
+    >
+      <input
+        type="text"
+        placeholder="نام تسک"
+        id="task-title"
+        class="text-date-color-light font-iranYekan text-[14px]"
+      /><input
+        type="text"
+        placeholder="توضیحات"
+        id="task-description"
+        class="text-task-creation-description-light font-iranYekan text-[12px]"
+      />
+    </div>
+  </body>
 </html>
