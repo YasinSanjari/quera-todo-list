@@ -14,19 +14,31 @@
     </div>
 
     <div
-      class="add__task__input border-task-border-light shadow-67 mt-8 flex flex-col rounded-xl border p-4"
+      class="add__task__input border-task-border-light shadow-67 font-iranYekan mt-8 rounded-xl border"
     >
-      <input
-        type="text"
-        placeholder="نام تسک"
-        id="task-title"
-        class="text-date-color-light font-iranYekan text-[14px]"
-      /><input
-        type="text"
-        placeholder="توضیحات"
-        id="task-description"
-        class="text-task-creation-description-light font-iranYekan text-[12px]"
-      />
+      <div class="flex flex-col p-4 gap-4">
+        <input
+          type="text"
+          placeholder="نام تسک"
+          id="task-title"
+          class="text-date-color-light text-[14px] md:text-[16px] focus:outline-none"
+        /><input
+          type="text"
+          placeholder="توضیحات"
+          id="task-description"
+          class="text-task-creation-description-light text-[12px] md:text-[14px] focus:outline-none"
+        />
+        <div
+          class="border-task-border-light text-task-creation-description-light flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px] my-6"
+        >
+          <a href=""><img src="./assets/images/tag-right.svg" alt="tags" /></a>
+          <span class="text-[12px] md:text-[14px]">تگ ها</span>
+        </div>
+      </div>
+      <div class="border-task-border-light border-t p-4 flex flex-row-reverse gap-1.5">
+        <button class="bg-primary px-4 py-1.5 text-white rounded-[6px] opacity-60 text-[12px] md:text-[14px]">اضافه کردن تسک</button>
+        <a href=""><img src="./assets/images/add.png" alt="close" class="rounded-[6px] p-1.5 bg-[#F5F5F5]"></a>
+      </div>
     </div>
   </body>
 </html>

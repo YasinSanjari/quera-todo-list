@@ -98,6 +98,6 @@
 
 @layer components {
   .add-task-btn {
-    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4;
+    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4 ;
   }
 }
