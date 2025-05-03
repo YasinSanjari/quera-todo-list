@@ -90,3 +90,149 @@
   --font-iranYekan: "iran-yekan";
   --font-morabba: "morabba";
 }
+
+@layer components {
+  body {
+    width: 100%;
+    margin: 0;
+    color: #fefefe;
+  }
+  .mobile__header {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0.5rem;
+    }
+    @media screen and (min-width: 768px){
+      .mobile__header {
+        display: none;
+        }
+    }
+
+  .hamburger {
+    position: relative;
+    z-index: 1100;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .hamburger__line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+  }
+  .profile {
+  }
+
+  .sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: static;
+    transition: transform 0.3s ease;
+    font-size: 0.875rem;
+    font-family: "IranYekan";
+  }
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      background: white;
+      margin: 0;
+    }
+    .sidebar.active {
+      transform: translateX(0);
+    }
+  }
+  .toggle__menu {
+    display: block;
+    width: 15%;
+  }
+  .mobile__menubar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .menubar {
+    color: #525252;
+    display: block;
+  }
+  .menubar a,
+  .mobile__menubar a {
+    @apply flex items-center justify-start px-5 py-3 hover:bg-blue-300;
+    width: 100%;
+    background-color: #f7f7f7;
+  }
+  .darkmode__container {
+    width: 100%;
+  }
+  .darkmode {
+    @apply my-5 flex items-center justify-center gap-2 rounded-md border-gray-500;
+    width: 85%;
+    padding: 0.35rem 0.2rem;
+    margin: 2rem auto 2rem auto;
+    background-color: #f7f7f7;
+  }
+  .darkmode button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 5px;
+    padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+  }
+  .darkmode img {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+  }
+  .darkmode span {
+    font-size: 0.875;
+    font-weight: 600;
+    color: #525252;
+  }
+
+  @media screen and (max-width: 768px) {
+    .q-container {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .menubar {
+      display: none;
+    }
+    .menubar.active {
+      display: block;
+    }
+    .toggle-menu {
+      display: none;
+    }
+    .darkmode__container {
+      width: 15%;
+    }
+    .darkmode {
+      @apply my-5 flex items-center justify-center gap-2 rounded-md border-gray-500;
+      width: 100%;
+      padding: 0.35rem 0.2rem;
+      margin: 0.3rem auto 0.3rem auto;
+      background-color: #f7f7f7;
+    }
+  }
+}

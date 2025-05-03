@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -6,5 +6,129 @@
     <title>کوئرا لیست</title>
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body></body>
+  <body>
+    <aside>
+      <!-- hamburger Menu -->
+      <div class="mobile__header">
+        <button id="hamburger" class="hamburger block lg:hidden">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+        <h3 class="mr-5 text-xl font-bold">کوئرا لیست</h3>
+      </div>
+       <!-- profile -->
+      <section class="profile flex w-full justify-between py-5">
+        <img
+          class="h-16 w-16 rounded-full"
+          src="./assets/images/007.jpg"
+          alt="profile pic"
+        />
+        <div class="mx-5">
+          <h2 class="text-lg font-extrabold">سلام، رویا</h2>
+          <p class="text-gray-500">سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
+        </div>
+      </section>
+      <!-- sidebar -->
+      <div class="toggle-menu">
+        <ul id="mobile__menubar" class="menubar lg:mobile__menubar">
+          <li class="bg-blue-100 text-blue-600">
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/home-2.png"
+                alt="home"
+              />
+              خانه
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/task-square.png"
+                alt="task"
+              />
+              تسک‌ها
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/calendar.png"
+                alt="calendar"
+              />
+              تقویم
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/arrange-square-2.png"
+                alt="arrange"
+              />
+              گزارشات
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/setting.png"
+                alt="setting"
+              />
+              تنظیمات
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/24-support.png"
+                alt="support"
+              />
+              پشتیبانی
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="ml-4 w-5"
+                src="./assets/images/profile.png"
+                alt="profile"
+              />
+              پروفایل
+            </a>
+          </li>
+        </ul>
+
+        <div class="darkmode__container">
+          <!-- dark/light toggle -->
+          <div class="darkmode">
+            <button class="bg-white">
+              <img src="./assets/images/sun.png" alt="light mode" />
+              <span>روشن</span>
+            </button>
+            <button>
+              <img src="./assets/images/moon.png" alt="dark mode" />
+              <span>تاریک</span>
+            </button>
+          </div>
+
+          <hr class="py-3" />
+
+          <button class="flex gap-2">
+            <img src="./assets/images/logout.png" alt="logout" />
+            <span>خروج</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main></main>
+
+    <script type="module" src="./src/js/sidebar.js"></script>
+  </body>
 </html>
