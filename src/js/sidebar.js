@@ -1,12 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.querySelector('.toggle-menu');
-    const menubar = document.getElementById('mobile-menubar');
-  
-    if (hamburger && sidebar && menubar) {
-      hamburger.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        menubar.classList.toggle('active');
-      });
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.querySelector(".sidebar");
+  const closeBtn = document.getElementById("close-sidebar");
+
+  // Create overlay
+  let overlay = document.createElement("div");
+  overlay.classList.add("sidebar-overlay");
+  document.body.appendChild(overlay);
+
+  function openSidebar() {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+    hamburger.style.display = "none";
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburger.style.display = "block";
+  }
+
+  hamburger.addEventListener("click", openSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+});
