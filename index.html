@@ -8,37 +8,91 @@
   </head>
   <body class="p-4">
     <!-- dont forget this styles -->
-    <div class="done__container add-task-btn text-[14px] md:text-[16px]">
+    <div
+      class="done__container add-task-btn text-[14px] md:text-[16px]"
+      id="add-task-btn"
+    >
       <img src="./assets/images/add.png" class="h-6 w-6" />
       <span>افزودن وظیفه جدید</span>
     </div>
 
+    <div class="my-16"></div>
+
     <div
-      class="add__task__input border-task-border-light shadow-67 font-iranYekan mt-8 rounded-xl border"
+      class="add__task__input border-task-border-light shadow-67 font-iranYekan rounded-xl border"
+      id="task-input"
     >
-      <div class="flex flex-col p-4 gap-4">
+      <div class="flex flex-col gap-4 p-4">
         <input
           type="text"
           placeholder="نام تسک"
           id="task-title"
-          class="text-date-color-light text-[14px] md:text-[16px] focus:outline-none"
+          class="text-date-color-light text-[14px] focus:outline-none md:text-[16px]"
         /><input
           type="text"
           placeholder="توضیحات"
           id="task-description"
-          class="text-task-creation-description-light text-[12px] md:text-[14px] focus:outline-none"
+          class="text-task-creation-description-light text-[12px] focus:outline-none md:text-[14px]"
         />
         <div
-          class="border-task-border-light text-task-creation-description-light flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px] my-6"
+          class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]"
         >
           <a href=""><img src="./assets/images/tag-right.svg" alt="tags" /></a>
           <span class="text-[12px] md:text-[14px]">تگ ها</span>
         </div>
+        <div
+          class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]"
+        >
+          <a href=""><img src="./assets/images/tag-right.png" alt="tags" /></a>
+          <span class="text-[12px] md:text-[14px]">تگ ها</span>
+        </div>
+        <!---------------------------->
+        <div
+          class="text-priority-low-text-light dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark flex w-max items-center justify-between rounded-[4px] px-2 py-0.5 text-[12px]"
+        >
+          <a href=""
+            ><img src="./assets/images/close-circle-priority.png" alt="close"
+          /></a>
+          <span>بالا</span>
+        </div>
+        <div
+          class="flex w-max gap-4 rounded-[8px] border border-[#EBEDEF] bg-white p-2.5"
+        >
+          <div
+            class="text-priority-high-text-light dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark rounded-[4px] px-2 py-0.5 text-[12px]"
+          >
+            <span>پایین</span>
+          </div>
+          <span class="text-[#EBEDEF]">|</span>
+          <div
+            class="text-priority-mid-text-light dark:text-priority-mid-text-dark bg-priority-mid-background-light dark:bg-priority-mid-background-dark rounded-[4px] px-2 py-0.5 text-[12px]"
+          >
+            <span>متوسط</span>
+          </div>
+          <span class="text-[#EBEDEF]">|</span>
+          <div
+            class="text-priority-low-text-light dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark rounded-[4px] px-2 py-0.5 text-[12px]"
+          >
+            <span>بالا</span>
+          </div>
+        </div>
       </div>
-      <div class="border-task-border-light border-t p-4 flex flex-row-reverse gap-1.5">
-        <button class="bg-primary px-4 py-1.5 text-white rounded-[6px] opacity-60 text-[12px] md:text-[14px]">اضافه کردن تسک</button>
-        <a href=""><img src="./assets/images/add.png" alt="close" class="rounded-[6px] p-1.5 bg-[#F5F5F5]"></a>
+      <div
+        class="border-task-border-light flex flex-row-reverse gap-1.5 border-t p-4"
+      >
+        <button
+          class="bg-primary rounded-[6px] px-4 py-1.5 text-[12px] text-white md:text-[14px]"
+        >
+          اضافه کردن تسک
+        </button>
+        <a href=""
+          ><img
+            src="./assets/images/close-circle-task.png"
+            alt="close"
+            class="rounded-[6px] bg-[#F5F5F5] p-1.5"
+        /></a>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
