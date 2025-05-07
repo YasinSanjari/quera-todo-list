@@ -303,3 +303,13 @@ html, body {
   }
   
 }
+
+@layer components{
+  .add-task-btn {
+    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4 ;
+  }
+
+  .priorities-container{
+    @apply flex w-max gap-4 rounded-[8px] border border-[#EBEDEF] bg-white p-2.5 dark:bg-[#0B192D] dark:border-[#293242];
+  }
+}
