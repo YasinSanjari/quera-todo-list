@@ -94,10 +94,6 @@
 
 
 /* menu styles */
-
-html, body {
-  background-color: #ffffff;
-}
 .mobile__header {
   display: flex;
   gap: 1rem;

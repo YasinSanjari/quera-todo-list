@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const addTaskButton = document.getElementById("add-task-btn");
+  const taskDetail = document.getElementById("task-detail")
 
   addTaskButton.addEventListener("click", () => {
+    taskDetail.style.display = "none";
     const taskInputWrapper = document.createElement("div");
     taskInputWrapper.innerHTML = `
       <div

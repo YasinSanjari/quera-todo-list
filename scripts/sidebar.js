@@ -2,11 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const sidebar = document.querySelector(".sidebar");
   const closeBtn = document.getElementById("close-sidebar");
-
-  // Create overlay
-  let overlay = document.createElement("div");
-  overlay.classList.add("sidebar-overlay");
-  document.body.appendChild(overlay);
+  const overlay = document.querySelector(".sidebar__overlay");
 
   function openSidebar() {
     sidebar.classList.add("active");
