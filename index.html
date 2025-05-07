@@ -6,16 +6,16 @@
     <title>کوئرا لیست</title>
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body>
-    <aside class="aside">
+  <body class="dark:bg-[#091120] dark:text-[#FFFFFF]">
+    <aside class="aside dark:bg-[#091120]">
       <!-- hamburger Menu -->
-      <div class="mobile__header">
+      <div class="mobile__header dark:bg-[#091120]">
         <button id="hamburger" class="hamburger block lg:hidden">
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
+          <span class="hamburger__line bg-black dark:bg-[#fff]"></span>
+          <span class="hamburger__line bg-black dark:bg-[#fff]"></span>
+          <span class="hamburger__line bg-black dark:bg-[#fff]"></span>
         </button>
-        <h3 class="mobile__header-h3 mr-15">کوئرا لیست</h3>
+        <h3 class="mobile__header-h3 mr-15 text-[#242424] dark:dark:text-[#FFFFFF]">کوئرا لیست</h3>
       </div>
       <!-- profile -->
       <section class="profile flex w-full justify-start gap-3 py-3">
@@ -25,85 +25,126 @@
           alt="profile pic"
         />
         <div class="profile__data">
-          <h2 class="profile__h2">سلام، رویا</h2>
+          <h2 class="profile__h2 text-[#242424] dark:text-[#FFFFFF]">
+            سلام، رویا
+          </h2>
           <p>سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
         </div>
       </section>
       <!-- sidebar -->
-      <div class="sidebar">
-        <div class="sidebar__header mb-4 flex items-center justify-between">
-          <h3 class="mr-4 text-black font-bold">کوئرا لیست</h3>
+      <div class="sidebar bg-[#fff] dark:bg-[#091120] dark:text-[#fff]">
+        <div
+          class="mb-4 flex items-center justify-between lg:hidden"
+        >
+          <h3 class="mr-4 font-bold  dark:text-[#fff]">کوئرا لیست</h3>
           <button id="close-sidebar" class="mr-4 text-xl font-bold">
             &times;
           </button>
         </div>
 
-        <ul id="mobile__menubar" class="menubar">
-          <li class="bg-blue-100 text-blue-600">
+        <ul id="mobile__menubar" class="menubar bg-[#fff] dark:bg-[#091120]">
+          <li
+            class="bg-blue-100 text-blue-600 dark:bg-[#041933] dark:text-[#FFFFFF]"
+          >
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/home-2.png"
+                alt="home"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/home-1.png"
                 alt="home"
               />
               خانه
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/task-square.png"
+                alt="task"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/task-square-1.png"
                 alt="task"
               />
               تسک‌ها
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/calendar.png"
+                alt="calendar"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/calendar-1.png"
                 alt="calendar"
               />
               تقویم
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/arrange-square-2.png"
+                alt="arrange"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/arrange-square-1.png"
                 alt="arrange"
               />
               گزارشات
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/setting.png"
+                alt="setting"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/setting-1.png"
                 alt="setting"
               />
               تنظیمات
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/24-support.png"
+                alt="support"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/24-support-2.png"
                 alt="support"
               />
               پشتیبانی
             </a>
           </li>
-          <li>
+          <li class="dark:text-[#FFFFFF]">
             <a href="#">
               <img
-                class="ml-4 w-5"
+                class="ml-4 w-5 dark:hidden"
                 src="./assets/images/profile.png"
+                alt="profile"
+              />
+              <img
+                class="ml-4 hidden w-5 dark:block"
+                src="./assets/images/profile-1.png"
                 alt="profile"
               />
               پروفایل
@@ -111,39 +152,56 @@
           </li>
         </ul>
 
-        <div class="darkmode__container">
+        <div class="darkmode__container text-[#525252] dark:text-[#FFFFFF] dark:bg-[#091120]">
           <!-- dark/light toggle -->
-          <div class="darkmode">
-            <button class="darkmode__button bg-white">
+          <div class="darkmode bg-[#f7f7f7] dark:bg-[#091120]">
+            <button
+              id="light-theme"
+              class="darkmode__button bg-white dark:bg-[#0C1B31] dark:text-[#7A7A7A]"
+            >
               <img
                 class="darkmode__img"
                 src="./assets/images/sun.png"
                 alt="light mode"
               />
-              <span class="aside__span">روشن</span>
+              <span class="aside__span cursor-pointer">روشن</span>
             </button>
-            <button class="darkmode__button">
+            <button id="dark-theme" class="darkmode__button dark:bg-[#002247]">
               <img
-                class="darkmode__img"
+                class="darkmode__img dark:hidden"
                 src="./assets/images/moon.png"
                 alt="dark mode"
               />
-              <span class="aside__span">تاریک</span>
+              <img
+                class="darkmode__img hidden dark:block"
+                src="./assets/images/moon-1.png"
+                alt="dark mode"
+              />
+              <span class="aside__span cursor-pointer">تاریک</span>
             </button>
           </div>
 
           <button class="mr-6 flex gap-3">
-            <img src="./assets/images/logout.png" alt="logout" />
-            <span class="aside__span">خروج</span>
+            <img
+              src="./assets/images/logout.png"
+              alt="logout"
+              class="dark:hidden"
+            />
+            <img
+            src="./assets/images/logout.png"
+            alt="logout"
+            class="hidden dark:block"
+          />
+            <span class="aside__span cursor-pointer">خروج</span>
           </button>
         </div>
       </div>
     </aside>
-    <div class="sidebar__overlay"></div>
+    <div class="sidebar__overlay bg-[#0000000F] dark:bg-[#060C18]"></div>
 
     <main></main>
 
     <script type="module" src="./scripts/sidebar.js"></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
