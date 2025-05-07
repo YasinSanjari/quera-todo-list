@@ -180,24 +180,6 @@
   }
 }
 @layer utilities {
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
   .my-6 {
     margin-block: calc(var(--spacing) * 6);
   }
@@ -207,9 +189,6 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -218,18 +197,6 @@
   }
   .w-max {
     width: max-content;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .cursor-default {
-    cursor: default;
-  }
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -243,14 +210,8 @@
   .justify-between {
     justify-content: space-between;
   }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
-  }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
@@ -302,14 +263,8 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
@@ -322,9 +277,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .py-0 {
-    padding-block: calc(var(--spacing) * 0);
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
@@ -347,9 +299,6 @@
   .text-\[\#EBEDEF\] {
     color: #EBEDEF;
   }
-  .text-\[\#FF0000\] {
-    color: #FF0000;
-  }
   .text-date-color-light {
     color: var(--color-date-color-light);
   }
@@ -368,16 +317,9 @@
   .text-white {
     color: var(--color-white);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-67 {
     --tw-shadow: var(--tw-shadow-color, rgba(17, 17, 26, 0.05)) 0px 4px 16px, var(--tw-shadow-color, rgba(17, 17, 26, 0.05)) 0px 8px 32px;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .focus\:outline-none {
     &:focus {
@@ -615,11 +557,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -638,7 +575,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
