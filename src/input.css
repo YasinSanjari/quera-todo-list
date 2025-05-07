@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-/* declaring fonts */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* declaring fonts */
 @font-face {
   font-family: "iran-yekan";
   src: url("../assets/Fonts/IranYekan/IRANYekanWebBold.woff2");
@@ -95,7 +96,7 @@
 /* menu styles */
 
 html, body {
-  color: #ffffff;
+  background-color: #ffffff;
 }
 .mobile__header {
   display: flex;
@@ -105,7 +106,6 @@ html, body {
   justify-content: start;
   margin: 1rem;
   padding: 0.3rem;
-  background-color: #ffffff;
   box-shadow:
     rgba(140, 136, 136, 0.16) 0px 10px 36px 0px,
     rgba(129, 125, 125, 0.06) 0px 0px 0px 1px;
@@ -113,7 +113,6 @@ html, body {
 .mobile__header-h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #242424;
 }
 .hamburger {
   position: relative;
@@ -126,12 +125,10 @@ html, body {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: black;
 }
 .profile {
   padding: 0.6rem;
   margin: 0.3rem;
-  color: #242424;
 }
 .profile__img {
   width: 3.5rem;
@@ -141,7 +138,6 @@ html, body {
 .profile__h2 {
   font-size: 1.125rem;
   font-weight: 800;
-  color: #242424;
 }
 .profile__data :nth-child(2) {
   color: #7d7d7f;
@@ -163,7 +159,6 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #525252;
 }
 .menubar a {
   display: flex;
@@ -196,7 +191,6 @@ html, body {
   width: 85%;
   padding: 0.35rem 0.2rem;
   margin: 2rem auto 2rem auto;
-  background-color: #f7f7f7;
 }
 .darkmode__button {
   display: flex;
@@ -214,7 +208,6 @@ html, body {
 .aside__span {
   font-size: 0.875;
   font-weight: 600;
-  color: #525252;
 }
 
 /* media queries for large screens  */
@@ -241,7 +234,7 @@ html, body {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #333;
+    /* color: #333; */
     cursor: pointer;
   }  
   .aside {
@@ -254,7 +247,6 @@ html, body {
     right: 0;
     height: 100vh;
     width: 70%;
-    background-color: #fff;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
@@ -267,7 +259,7 @@ html, body {
   .sidebar__overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
     z-index: 999;
     display: none;
   }
@@ -276,7 +268,6 @@ html, body {
   }
   .menubar {
     width: 100%;
-    background-color: #ffffff;
   }
   .menubar a {
     display: flex;
@@ -302,7 +293,6 @@ html, body {
     width: 100%;
     padding: 0.35rem 0.2rem;
     margin: 0.3rem auto 0.3rem auto;
-    background-color: #f7f7f7;
   }
   .darkmode__container {
     width: 100%;
