@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-    
     addTaskButton.replaceWith(taskInputWrapper.firstElementChild);
   });
 
