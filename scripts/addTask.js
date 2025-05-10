@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             taskItem.className = "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
             taskItem.innerHTML = `
                 <span
-                    class="absolute top-3 right-0 h-[4.5rem] w-1 rounded-s-md ${priorityColorMap[task.priority] || ''}"
+                    class="absolute top-3 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ''} z-10"
                 ></span>
                 <div class="flex items-start justify-between">
                     <div class="flex items-center">
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 class="rounded-[6px] bg-[#F5F5F5] p-1.5"
                 />
             </a>
-            <a href="" class="">
+            <a href="" class="dark:block hidden">
                 <img
                 src="./assets/images/close-circle-dark.png"
                 alt="close"
