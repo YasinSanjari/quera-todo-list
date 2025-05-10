@@ -90,8 +90,11 @@
 
   --font-iranYekan: "iran-yekan";
   --font-morabba: "morabba";
-}
 
+  --shadow-header:
+    rgba(140, 136, 136, 0.16) 0px 10px 36px 0px,
+    rgba(129, 125, 125, 0.06) 0px 0px 0px 1px;
+}
 
 /* menu styles */
 .mobile__header {
@@ -102,9 +105,6 @@
   justify-content: start;
   margin: 1rem;
   padding: 0.3rem;
-  box-shadow:
-    rgba(140, 136, 136, 0.16) 0px 10px 36px 0px,
-    rgba(129, 125, 125, 0.06) 0px 0px 0px 1px;
 }
 .mobile__header-h3 {
   font-size: 1rem;
@@ -160,7 +160,7 @@
 }
 .menubar a:hover {
   background-color: rgb(111, 115, 127);
-  color:#ffffff;
+  color: #ffffff;
 }
 .darkmode__container {
   width: 100%;
@@ -170,11 +170,11 @@
   margin-top: 15rem;
 }
 .darkmode__container > button:last-child {
-    border-top: 1px solid #E9E9E9;
-    padding-top: 1rem;
-    width: 85%;
-    margin: 0 auto; 
-  }
+  border-top: 1px solid #e9e9e9;
+  padding-top: 1rem;
+  width: 85%;
+  margin: 0 auto;
+}
 .darkmode {
   display: flex;
   justify-content: center;
@@ -204,7 +204,6 @@ main {
   width: 100%;
 }
 
-
 /* media queries for large screens  */
 @media screen and (min-width: 768px) {
   .mobile__header {
@@ -216,7 +215,7 @@ main {
     overflow: hidden;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 1rem;
-    margin: 1.5vw; 
+    margin: 1.5vw;
     position: fixed;
     right: 0;
     height: 100%;
@@ -234,7 +233,7 @@ main {
     font-size: 1.5rem;
     /* color: #333; */
     cursor: pointer;
-  }  
+  }
   .aside {
     padding: 0.3rem;
   }
@@ -275,7 +274,7 @@ main {
   }
   .menubar a:hover {
     background-color: rgb(130, 132, 136);
-    color:#ffffff;
+    color: #ffffff;
   }
   .menubar.active {
     display: block;
@@ -303,15 +302,14 @@ main {
   .darkmode__img {
     margin-left: 0.5rem;
   }
-  
 }
 
-@layer components{
+@layer components {
   .add-task-btn {
-    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4 ;
+    @apply font-iranYekan text-primary flex items-center gap-2 rounded-lg border border-dashed border-[#CCCCCC] py-4 pr-4;
   }
 
-  .priorities-container{
-    @apply flex w-max gap-4 rounded-[8px] border border-[#EBEDEF] bg-white p-2.5 dark:bg-[#0B192D] dark:border-[#293242];
+  .priorities-container {
+    @apply flex w-max gap-4 rounded-[8px] border border-[#EBEDEF] bg-white p-2.5 dark:border-[#293242] dark:bg-[#0B192D];
   }
 }
