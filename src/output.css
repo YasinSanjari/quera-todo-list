@@ -600,6 +600,14 @@
   .underline {
     text-decoration-line: underline;
   }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-aside {
+    --tw-shadow: var(--tw-shadow-color, rgba(100, 100, 111, 0.2)) 0px 7px 29px 0px;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .shadow-header {
     --tw-shadow: var(--tw-shadow-color, rgba(140, 136, 136, 0.16)) 0px 10px 36px 0px, var(--tw-shadow-color, rgba(129, 125, 125, 0.06)) 0px 0px 0px 1px;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -992,7 +1000,6 @@ main {
     width: 20%;
     height: calc(100vh - 4rem);
     overflow: hidden;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 1rem;
     margin: 1.5vw;
     position: fixed;

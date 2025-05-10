@@ -94,6 +94,8 @@
   --shadow-header:
     rgba(140, 136, 136, 0.16) 0px 10px 36px 0px,
     rgba(129, 125, 125, 0.06) 0px 0px 0px 1px;
+
+  --shadow-aside: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* menu styles */
@@ -213,7 +215,6 @@ main {
     width: 20%;
     height: calc(100vh - 4rem);
     overflow: hidden;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 1rem;
     margin: 1.5vw;
     position: fixed;
