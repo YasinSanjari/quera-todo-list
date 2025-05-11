@@ -206,6 +206,10 @@ main {
   width: 100%;
 }
 
+.dark input:focus {
+  background-color: transparent !important;
+}
+
 /* media queries for large screens  */
 @media screen and (min-width: 768px) {
   .mobile__header {
