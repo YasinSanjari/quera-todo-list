@@ -125,8 +125,8 @@
   margin: 5px auto;
 }
 .profile {
-  padding: 0.6rem;
-  margin: 0.3rem;
+  /* padding: 0.6rem; */
+  /* margin: 0.3rem; */
 }
 .profile__img {
   border-radius: 50px;
