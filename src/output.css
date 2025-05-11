@@ -226,9 +226,6 @@
   .my-6 {
     margin-block: calc(var(--spacing) * 6);
   }
-  .my-\[5vh\] {
-    margin-block: 5vh;
-  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -665,49 +662,9 @@
       padding-block: calc(var(--spacing) * 16);
     }
   }
-  .md\:py-\[5\] {
-    @media (width >= 48rem) {
-      padding-block: 5;
-    }
-  }
-  .md\:py-\[5vh\] {
-    @media (width >= 48rem) {
-      padding-block: 5vh;
-    }
-  }
-  .md\:py-\[10\] {
-    @media (width >= 48rem) {
-      padding-block: 10;
-    }
-  }
-  .md\:py-\[10vh\] {
-    @media (width >= 48rem) {
-      padding-block: 10vh;
-    }
-  }
   .md\:pb-\[2\.5vh\] {
     @media (width >= 48rem) {
       padding-bottom: 2.5vh;
-    }
-  }
-  .md\:pb-\[3vh\] {
-    @media (width >= 48rem) {
-      padding-bottom: 3vh;
-    }
-  }
-  .md\:pb-\[5vh\] {
-    @media (width >= 48rem) {
-      padding-bottom: 5vh;
-    }
-  }
-  .md\:pb-\[7vh\] {
-    @media (width >= 48rem) {
-      padding-bottom: 7vh;
-    }
-  }
-  .md\:pb-\[10vh\] {
-    @media (width >= 48rem) {
-      padding-bottom: 10vh;
     }
   }
   .md\:text-sm {
