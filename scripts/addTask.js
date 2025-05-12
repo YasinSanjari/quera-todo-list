@@ -259,7 +259,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.body.addEventListener("click", (e) => {
-    if (e.target.classList.contains("task-checkbox")) {
+    // Handle task completion
+    if (
+      e.target.classList.contains("task-checkbox") &&
+      e.target.hasAttribute("data-index")
+    ) {
       e.preventDefault();
       const index = e.target.dataset.index;
       const completedTask = tasks.splice(index, 1)[0];
