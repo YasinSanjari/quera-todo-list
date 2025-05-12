@@ -229,9 +229,17 @@ document.addEventListener("DOMContentLoaded", () => {
           const newTag = document.createElement("div");
           if (selectedPriority === "text-priority-high-text-light") {
             newTag.innerHTML = `
-                    <div class="priority-option text-priority-high-text-light w-max cursor-pointer dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
-                        <span>بالا</span>
-                    </div>
+                            <div
+                            class="priority-option text-priority-high-text-light dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark flex w-max cursor-pointer items-center rounded-[4px] px-2 py-0.5 text-[12px]"
+                            >
+                            <a href="" class="hidden dark:block">
+                                <img src="./assets/images/close-circle-priority-dark.png" alt="close" />
+                            </a>
+                            <a href="" class="dark:hidden">
+                                <img src="./assets/images/close-circle-priority.png" alt="close" />
+                            </a>
+                            <span>بالا</span>
+                            </div>
                     `;
           } else if (selectedPriority === "text-priority-mid-text-light") {
             newTag.innerHTML = `
