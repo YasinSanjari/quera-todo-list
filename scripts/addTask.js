@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let completedTasks = JSON.parse(localStorage.getItem("completedTasks")) || [];
 
   const priorityColorMap = {
-    "text-priority-high-text-light": "bg-green-500 dark:bg-green-500",
+    "text-priority-low-text-light": "bg-green-500 dark:bg-green-500",
     "text-priority-mid-text-light": "bg-orange-400 dark:bg-orange-400",
-    "text-priority-low-text-light": "bg-red-500 dark:bg-red-500",
+    "text-priority-high-text-light": "bg-red-500 dark:bg-red-500",
   };
   const priorityOrder = {
     "text-priority-low-text-light": 1,
