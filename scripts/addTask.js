@@ -102,8 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             <button class="delete-task" data-index="${index}" title="حذف تسک">
                                 <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
                             </button>
+                            <span class="text-[#EBEDEF]">|</span>
                             <button class="edit-task border-r-gray-200 flex items-center" data-index="${index}" title="ویرایش تسک">
-                                |<img src="../assets/images/tabler_edit.png" alt="edit" class=" border-gray-200 h-5 w-5 max-w-none z-10" />
+                                <img src="../assets/images/tabler_edit.png" alt="edit" class=" border-gray-200 h-5 w-5 max-w-none z-10" />
                             </button>
                         </figure>
                     </div>
