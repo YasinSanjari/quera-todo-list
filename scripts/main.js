@@ -17,6 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
   darkTheme.addEventListener("click", () => {
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
-    console.log("dark mode added")
   });
 });
