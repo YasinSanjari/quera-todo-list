@@ -71,15 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
     completedTasks.forEach((task) => {
       const taskItem = document.createElement("li");
       taskItem.className =
-        "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
+        "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31] mb-4";
       taskItem.innerHTML = `
                 <span
-                    class="absolute top-3 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ""} z-10"
+                    class="absolute top-2 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ""} z-10"
                 ></span>
-                <div class="flex items-start justify-between">
+                <div class="flex items-center justify-between">
                     <div class="flex items-center">
                         <input type="checkbox" checked class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" />
-                        <h2 class="px-4 pb-3 text-sm font-semibold line-through">${task.title}</h2>
+                        <h2 class="px-4 py-3 text-sm font-semibold line-through text-center">${task.title}</h2>
                     </div>
                     <button id="ellipsis" class="text-xl">&#x22EE;</button>
                 </div>
