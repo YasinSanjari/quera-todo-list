@@ -349,24 +349,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Checkbox toggle
-    if (e.target.classList.contains("task-checkbox")) {
-      const index = parseInt(e.target.dataset.index);
-      if (!isNaN(index)) {
-        if (e.target.checked) {
-          const task = tasks[index];
-          completedTasks.push(task);
-          tasks.splice(index, 1);
-        } else {
-          const task = completedTasks[index];
-          tasks.push(task);
-          completedTasks.splice(index, 1);
+    document.body.addEventListener("click", (e) => {
+      if (e.target.classList.contains("task-checkbox")) {
+        const listItem = e.target.closest('li');
+        if (!listItem) return;
+    
+        const isCompletedList = listItem.closest('#completed-taskList') !== null;
+        const taskArray = isCompletedList ? completedTasks : tasks;
+        const targetArray = isCompletedList ? tasks : completedTasks;
+        const index = Array.from(listItem.parentNode.children).indexOf(listItem);
+        
+        if (index >= 0 && index < taskArray.length) {
+          const task = taskArray[index];
+          targetArray.push(task); 
+          taskArray.splice(index, 1);
+    
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+          localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+          renderTasks();
+          renderCompletedTasks();
         }
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
-        renderTasks();
-        renderCompletedTasks();
       }
-    }
+    });
 
     // Delete button
     const deleteButton = e.target.closest(".delete-task");
