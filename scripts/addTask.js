@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
       priorities.className = "priorities-container";
       priorities.id = "priorities-container";
       priorities.innerHTML = `
-            <div data-priority="text-priority-high-text-light" class="priority-option text-priority-high-text-light cursor-pointer dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
+            <div data-priority="text-priority-low-text-light" class="priority-option text-priority-low-text-light cursor-pointer dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
               <span>پایین</span>
             </div>
             <span class="text-[#EBEDEF] dark:text-[#293242]">|</span>
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>متوسط</span>
             </div>
             <span class="text-[#EBEDEF] dark:text-[#293242]">|</span>
-            <div data-priority="text-priority-low-text-light" class="priority-option text-priority-low-text-light cursor-pointer dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
+            <div data-priority="text-priority-high-text-light" class="priority-option text-priority-high-text-light cursor-pointer dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
               <span>بالا</span>
             </div>
           `;
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (selectedPriority === "text-priority-high-text-light") {
             newTag.innerHTML = `
                     <div class="priority-option text-priority-high-text-light w-max cursor-pointer dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
-                        <span>پایین</span>
+                        <span>بالا</span>
                     </div>
                     `;
           } else if (selectedPriority === "text-priority-mid-text-light") {
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (selectedPriority === "text-priority-low-text-light") {
             newTag.innerHTML = `
                     <div class="priority-option text-priority-low-text-light w-max cursor-pointer dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark rounded-[4px] px-2 py-0.5 text-[12px]">
-                        <span>بالا</span>
+                        <span>پایین</span>
                     </div>
                     `;
           }
