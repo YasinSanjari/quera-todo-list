@@ -609,9 +609,6 @@
   .text-\[\#EBEDEF\] {
     color: #EBEDEF;
   }
-  .text-\[12p\] {
-    color: 12p;
-  }
   .text-blue-600 {
     color: var(--color-blue-600);
   }
