@@ -232,36 +232,36 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div
                     class="priority-option text-priority-high-text-light dark:text-priority-high-text-dark bg-priority-high-background-light dark:bg-priority-high-background-dark flex w-max cursor-pointer items-center rounded-[4px] px-2 py-0.5 text-[12px]"
                     >
-                        <a href="" class="hidden dark:block">
+                        <button type="button" class="priority-close-btn hidden dark:block">
                             <img src="./assets/images/close-circle-priority-dark.png" alt="close" />
-                        </a>
-                        <a href="" class="dark:hidden">
+                        </button>
+                        <button type="button" class="priority-close-btn dark:hidden">
                             <img src="./assets/images/close-circle-priority.png" alt="close" />
-                        </a>
+                        </button>
                         <span>بالا</span>
                     </div>
                     `;
           } else if (selectedPriority === "text-priority-mid-text-light") {
             newTag.innerHTML = `
                     <div class="priority-option text-priority-mid-text-light w-max cursor-pointer dark:text-priority-mid-text-dark bg-priority-mid-background-light dark:bg-priority-mid-background-dark rounded-[4px] px-2 py-0.5 text-[12px] flex items-center">
-                        <a href="" class="hidden dark:block">
+                        <button type="button" class="priority-close-btn hidden dark:block">
                             <img src="./assets/images/close-circle-priority-dark.png" alt="close" />
-                        </a>
-                        <a href="" class="dark:hidden">
+                        </button>
+                        <button type="button" class="priority-close-btn dark:hidden">
                             <img src="./assets/images/close-circle-priority.png" alt="close" />
-                        </a>    
+                        </button>    
                     <span>متوسط</span>
                     </div>
                     `;
           } else if (selectedPriority === "text-priority-low-text-light") {
             newTag.innerHTML = `
                     <div class="priority-option text-priority-low-text-light w-max cursor-pointer dark:text-priority-low-text-dark bg-priority-low-background-light dark:bg-priority-low-background-dark rounded-[4px] px-2 py-0.5 text-[12px] flex items-center">
-                        <a href="" class="hidden dark:block">
+                        <button type="button" class="priority-close-btn hidden dark:block">
                             <img src="./assets/images/close-circle-priority-dark.png" alt="close" />
-                        </a>
-                        <a href="" class="dark:hidden">
+                        </button>
+                        <button type="button" class="priority-close-btn dark:hidden">
                             <img src="./assets/images/close-circle-priority.png" alt="close" />
-                        </a>    
+                        </button>    
                     <span>پایین</span>
                     </div>
                     `;
@@ -276,6 +276,31 @@ document.addEventListener("DOMContentLoaded", () => {
         newTagsButton.nextSibling,
       );
     }
+  });
+
+  document.body.addEventListener("click", (e) => {
+    const closeBtn = e.target.closest(".priority-close-btn");
+    if (!closeBtn) return;
+
+    e.preventDefault();
+
+    // Find the parent priority option element
+    const priorityOption = closeBtn.closest(".priority-option");
+
+    // Create the original tags button to replace the priority option
+    const tagsButtonWrapper = document.createElement("div");
+    tagsButtonWrapper.innerHTML = `
+      <div id="tags-right" class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]">
+        <a href="#"><img src="./assets/images/tag-right.svg" alt="tags" /></a>
+        <span class="text-[12px] md:text-[14px]">تگ ها</span>
+      </div>
+    `;
+
+    // Replace the priority option with the original tags button
+    priorityOption.replaceWith(tagsButtonWrapper.firstElementChild);
+
+    // Clear the selected priority from localStorage
+    localStorage.removeItem("selectedPriority");
   });
 
   document.body.addEventListener("click", (e) => {
