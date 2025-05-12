@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="border-task-border-light flex flex-row-reverse gap-1.5 border-t dark:border-[#3D3D3D] p-4">
                     <button id="save-edited-task-btn" class="bg-primary cursor-pointer rounded-[6px] px-4 py-1.5 text-[12px] text-white md:text-[14px] dark:bg-[#002247]">
-                        ذخیره تغییرات
+                         ویرایش تسک
                     </button>
                     <button id="cancel-edit-btn" class="dark:hidden">
                         <img src="./assets/images/close-circle-task.png" alt="close" class="rounded-[6px] bg-[#F5F5F5] p-1.5" />
