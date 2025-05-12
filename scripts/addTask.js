@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="checkbox" checked class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" />
         <h2 class="px-4 pb-3 text-sm font-semibold line-through">${task.title}</h2>
     </div>
-    <div class="relative">
+    <div class="relative"> 
         <button class="ellipsis text-xl" data-index="${index}">⋮</button>
         <div class="options hidden absolute left-1 top-5 z-10">
             <figure class="flex justify-center gap-2 p-1 bg-white dark:bg-[#0c1b31] border border-gray-200 dark:border-[#203E62] rounded-md shadow-lg ">
