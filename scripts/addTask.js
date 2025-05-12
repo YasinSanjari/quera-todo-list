@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load tasks from local storage
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   let completedTasks = JSON.parse(localStorage.getItem("completedTasks")) || [];
+  completedTasks = completedTasks.filter((task) => task !== null);
 
   const priorityColorMap = {
     "text-priority-low-text-light": "bg-green-500 dark:bg-green-500",
@@ -85,29 +86,28 @@ document.addEventListener("DOMContentLoaded", () => {
       taskItem.className =
         "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
       taskItem.innerHTML = `
-                <span
-                    class="absolute top-3 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ""} z-10"
-                ></span>
-                <div class="flex items-start justify-between">
-                    <div class="flex items-center">
-                        <input type="checkbox" checked class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" />
-                        <h2 class="px-4 pb-3 text-sm font-semibold line-through">${task.title}</h2>
-                    </div>
-                    </div>
-                    <div class="relative">
-                          <button class="ellipsis text-xl" data-index="${index}">⋮</button>
-                          <div class="options hidden absolute left-1 top-5 z-10">
-                             <figure class="flex justify-center gap-2 p-1 bg-white dark:bg-[#0c1b31] border border-gray-200 dark:border-[#203E62] rounded-md shadow-lg ">
-                              <button class="delete-task" data-index="${index}" title="حذف تسک">
-                                      <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
-                              </button>
-                              <button class="edit-task border-r-gray-200" data-index="${index}" title="ویرایش تسک">
-                                      <img src="../assets/images/tabler_edit.png" alt="edit" class="h-5 w-5 max-w-none z-10" />
-                              </button>
-                             </figure>
-                          </div>
-                      </div>
-          </div> 
+               <span
+    class="absolute top-3 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ""} z-10"
+></span>
+<div class="flex items-start justify-between">
+    <div class="flex items-center">
+        <input type="checkbox" checked class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" />
+        <h2 class="px-4 pb-3 text-sm font-semibold line-through">${task.title}</h2>
+    </div>
+    <div class="relative">
+        <button class="ellipsis text-xl" data-index="${index}">⋮</button>
+        <div class="options hidden absolute left-1 top-5 z-10">
+            <figure class="flex justify-center gap-2 p-1 bg-white dark:bg-[#0c1b31] border border-gray-200 dark:border-[#203E62] rounded-md shadow-lg ">
+                <button class="delete-task" data-index="${index}" title="حذف تسک">
+                    <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
+                </button>
+                <button class="edit-task border-r-gray-200" data-index="${index}" title="ویرایش تسک">
+                    <img src="../assets/images/tabler_edit.png" alt="edit" class="h-5 w-5 max-w-none z-10" />
+                </button>
+            </figure>
+        </div>
+    </div>
+</div>
             `;
       completedTasksList.appendChild(taskItem);
     });
@@ -387,35 +387,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-        // Edit button
-        const editButton = e.target.closest(".edit-task");
-        if (editButton) {
-          const index = parseInt(editButton.dataset.index);
-          if (!isNaN(index)) {
-            const isCompletedTask = editButton.closest("#completed-taskList");
-            const task = isCompletedTask ? completedTasks[index] : tasks[index];
-            showEditTaskForm(task, index, isCompletedTask);
-          }
+    // Edit button
+    const editButton = e.target.closest(".edit-task");
+    if (editButton) {
+      e.preventDefault();
+      const index = parseInt(editButton.dataset.index);
+      if (!isNaN(index)) {
+        const isCompletedTask = editButton.closest("#completed-taskList");
+        const taskList = isCompletedTask ? completedTasks : tasks;
+        const task = taskList[index];
+      }
+    }
+
+    // Ellipsis button to show/hide options
+    const ellipsis = e.target.closest(".ellipsis");
+    if (ellipsis) {
+      document.querySelectorAll(".options").forEach((option) => {
+        if (option !== ellipsis.parentElement.querySelector(".options")) {
+          option.classList.add("hidden");
         }
-    
-        // Ellipsis button to show/hide options
-        const ellipsis = e.target.closest(".ellipsis");
-        if (ellipsis) {
-          document.querySelectorAll(".options").forEach((option) => {
-            if (option !== ellipsis.parentElement.querySelector(".options")) {
-              option.classList.add("hidden");
-            }
-          });
-    
-          const options = ellipsis.parentElement.querySelector(".options");
-          if (options) {
-            options.classList.toggle("hidden");
-          }
-        } else {
-          document.querySelectorAll(".options").forEach((option) => {
-            option.classList.add("hidden");
-          });
-        }
+      });
+
+      const options = ellipsis.parentElement.querySelector(".options");
+      if (options) {
+        options.classList.toggle("hidden");
+      }
+    } else {
+      document.querySelectorAll(".options").forEach((option) => {
+        option.classList.add("hidden");
+      });
+    }
   });
 
   // Initial rendering of tasks
