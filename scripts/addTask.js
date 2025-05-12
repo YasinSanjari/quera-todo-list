@@ -394,8 +394,75 @@ document.addEventListener("DOMContentLoaded", () => {
       const index = parseInt(editButton.dataset.index);
       if (!isNaN(index)) {
         const isCompletedTask = editButton.closest("#completed-taskList");
-        const taskList = isCompletedTask ? completedTasks : tasks;
-        const task = taskList[index];
+        const task = isCompletedTask ? completedTasks[index] : tasks[index];
+
+        taskDetail.style.display = "none";
+
+        const taskInputWrapper = document.createElement("div");
+        taskInputWrapper.innerHTML = `
+            <div class="add__task__input border-task-border-light shadow-67 font-iranYekan rounded-xl border dark:bg-background-dark" id="task-input">
+                <div class="flex flex-col gap-4 p-4">
+                    <input type="text" placeholder="نام تسک" id="edit-task-title" class="text-date-color-light text-[14px] focus:outline-none md:text-[16px] dark:text-white" value="${task.title}" />
+                    <input type="text" placeholder="توضیحات" id="edit-task-description" class="text-task-creation-description-light text-[12px] focus:outline-none md:text-[14px]" value="${task.description}" />
+                    <div class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]" id="edit-tags-right">
+                        <a href="#"><img src="./assets/images/tag-right.svg" alt="tags" /></a>
+                        <span class="text-[12px] md:text-[14px]">تگ ها</span>
+                    </div>
+                </div>
+                <div class="border-task-border-light flex flex-row-reverse gap-1.5 border-t dark:border-[#3D3D3D] p-4">
+                    <button id="save-edited-task-btn" class="bg-primary cursor-pointer rounded-[6px] px-4 py-1.5 text-[12px] text-white md:text-[14px] dark:bg-[#002247]">
+                        ذخیره تغییرات
+                    </button>
+                    <button id="cancel-edit-btn" class="dark:hidden">
+                        <img src="./assets/images/close-circle-task.png" alt="close" class="rounded-[6px] bg-[#F5F5F5] p-1.5" />
+                    </button>
+                    <button id="cancel-edit-btn-dark" class="dark:block hidden">
+                        <img src="./assets/images/close-circle-dark.png" alt="close" class="rounded-[6px] dark:bg-[#002247] p-1.5" />
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const mainSection = document.querySelector("main section");
+        mainSection.insertBefore(taskInputWrapper, taskDetail);
+        document
+          .getElementById("save-edited-task-btn")
+          .addEventListener("click", () => {
+            const newTitle = document
+              .getElementById("edit-task-title")
+              .value.trim();
+            const newDescription = document
+              .getElementById("edit-task-description")
+              .value.trim();
+            if (!newTitle || !newDescription) {
+              alert("لطفا عنوان و توضیحات را وارد کنید");
+              return;
+            }
+            task.title = newTitle;
+            task.description = newDescription;
+
+            if (isCompletedTask) {
+              localStorage.setItem(
+                "completedTasks",
+                JSON.stringify(completedTasks),
+              );
+            } else {
+              localStorage.setItem("tasks", JSON.stringify(tasks));
+            }
+            taskInputWrapper.remove();
+            renderTasks();
+            renderCompletedTasks();
+          });
+        document
+          .getElementById("cancel-edit-btn")
+          ?.addEventListener("click", () => {
+            taskInputWrapper.remove();
+          });
+        document
+          .getElementById("cancel-edit-btn-dark")
+          ?.addEventListener("click", () => {
+            taskInputWrapper.remove();
+          });
       }
     }
 
