@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     completedTasks.forEach((task, index) => {
       const taskItem = document.createElement("li");
       taskItem.className =
-        "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
+        "relative rounded-xl border border-gray-100 bg-white p-4 mb-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
       taskItem.innerHTML = `
                <span
     class="absolute top-3 right-0 h-4/5 w-1 rounded-1-md rounded-tl-md rounded-bl-md ${priorityColorMap[task.priority] || ""} z-10"
@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="delete-task" data-index="${index}" title="حذف تسک">
                     <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
                 </button>
-                <button class="edit-task border-r-gray-200" data-index="${index}" title="ویرایش تسک">
-                    <img src="../assets/images/tabler_edit.png" alt="edit" class="h-5 w-5 max-w-none z-10" />
+                <button class="edit-task border-r-gray-200 flex items-center" data-index="${index}" title="ویرایش تسک">
+                    |<img src="../assets/images/tabler_edit.png" alt="edit" class=" border-gray-200 h-5 w-5 max-w-none z-10" />
                 </button>
             </figure>
         </div>
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCompletedTasks();
     }
 
-    // Checkbox changes
+    // Checkbox toggle
     if (e.target.classList.contains("task-checkbox")) {
       const index = parseInt(e.target.dataset.index);
       if (!isNaN(index)) {
