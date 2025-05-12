@@ -9,9 +9,11 @@
   <body
     class="font-iranYekan flex flex-col bg-[#ffffff] md:flex-row dark:bg-[#060C18] dark:text-[#FFFFFF]"
   >
-    <aside class="aside dark:bg-[#060C18] shadow-aside dark:shadow-none">
+    <aside class="aside md:shadow-aside dark:bg-[#060C18] dark:shadow-none">
       <!-- hamburger Menu -->
-      <div class="mobile__header dark:bg-[#091120] dark:shadow-none shadow-header">
+      <div
+        class="mobile__header shadow-header dark:bg-[#091120] dark:shadow-none"
+      >
         <button id="hamburger" class="hamburger block md:hidden">
           <span class="hamburger__line bg-black dark:bg-[#fff]"></span>
           <span class="hamburger__line bg-black dark:bg-[#fff]"></span>
@@ -25,7 +27,7 @@
       </div>
       <!-- profile -->
       <section
-        class="profile flex w-full items-center justify-start gap-3 px-4 py-16"
+        class="profile flex w-full items-center justify-start gap-3 px-4 md:bg-[#fff] md:py-16 md:dark:bg-[#091120]"
       >
         <img
           class="profile__img h-15 w-15 object-fill md:h-10 md:w-10"
@@ -43,7 +45,9 @@
         </div>
       </section>
       <!-- sidebar -->
-      <div class="sidebar bg-[#fff] dark:bg-[#091120] dark:text-[#fff]">
+      <div
+        class="sidebar bg-[#fff] md:pb-[2.5vh] dark:bg-[#091120] dark:text-[#fff]"
+      >
         <div class="mb-4 flex items-center justify-between md:hidden">
           <h3 class="mr-4 font-bold dark:text-[#fff]">کوئرا لیست</h3>
           <button id="close-sidebar" class="mr-4 text-xl font-bold">

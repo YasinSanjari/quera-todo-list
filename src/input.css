@@ -124,10 +124,9 @@
   height: 3px;
   margin: 5px auto;
 }
-.profile {
-  padding: 0.6rem;
-  margin: 0.3rem;
-}
+/* .profile {
+
+} */
 .profile__img {
   border-radius: 50px;
 }
@@ -204,6 +203,14 @@
 
 main {
   width: 100%;
+}
+
+.dark input:focus {
+  background-color: transparent !important;
+}
+
+input:focus{
+  background-color: transparent !important;
 }
 
 /* media queries for large screens  */
