@@ -48,8 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
                         <input type="checkbox" class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" data-index="${index}" />
                         <h2 class="px-4 pb-3 text-sm font-semibold">${task.title}</h2>
                     </div>
-                    <button id="ellipsis" class="text-xl">&#x22EE;</button>
-                </div>
+                    <div class="relative">
+                          <button class="ellipsis text-xl" data-index="${index}">⋮</button>
+                          <div class="options hidden absolute left-1 top-5 z-10">
+                             <figure class="flex justify-center items-center gap-2 p-1 bg-white dark:bg-[#0c1b31] border border-gray-200 dark:border-[#203E62] rounded-md shadow-lg ">
+                              <button class="delete-task" data-index="${index}" title="حذف تسک">
+                                      <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
+                              </button>
+                              <button class="edit-task border-r-gray-200" data-index="${index}" title="ویرایش تسک">
+                                      <img src="../assets/images/tabler_edit.png" alt="edit" class="h-5 w-5 max-w-none z-10" />
+                              </button>
+                             </figure>
+                          </div>
+                      </div>
+                    </div>
                 <p class="mt-1 mr-9 text-xs text-gray-500 dark:text-gray-400">${task.description}</p>
             `;
       tasksList.appendChild(taskItem);
@@ -68,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (a, b) =>
         (priorityOrder[a.priority] || 99) - (priorityOrder[b.priority] || 99),
     );
-    completedTasks.forEach((task) => {
+    completedTasks.forEach((task, index) => {
       const taskItem = document.createElement("li");
       taskItem.className =
         "relative rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-[#203E62] dark:bg-[#0c1b31]";
@@ -81,8 +93,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         <input type="checkbox" checked class="task-checkbox h-5 w-5 border border-gray-200 rounded-lg" />
                         <h2 class="px-4 pb-3 text-sm font-semibold line-through">${task.title}</h2>
                     </div>
-                    <button id="ellipsis" class="text-xl">&#x22EE;</button>
-                </div>
+                    </div>
+                    <div class="relative">
+                          <button class="ellipsis text-xl" data-index="${index}">⋮</button>
+                          <div class="options hidden absolute left-1 top-5 z-10">
+                             <figure class="flex justify-center gap-2 p-1 bg-white dark:bg-[#0c1b31] border border-gray-200 dark:border-[#203E62] rounded-md shadow-lg ">
+                              <button class="delete-task" data-index="${index}" title="حذف تسک">
+                                      <img src="../assets/images/tabler_trash-x.png" alt="delete" class="h-5 w-5 max-w-none z-10" />
+                              </button>
+                              <button class="edit-task border-r-gray-200" data-index="${index}" title="ویرایش تسک">
+                                      <img src="../assets/images/tabler_edit.png" alt="edit" class="h-5 w-5 max-w-none z-10" />
+                              </button>
+                             </figure>
+                          </div>
+                      </div>
+          </div> 
             `;
       completedTasksList.appendChild(taskItem);
     });
@@ -320,6 +345,77 @@ document.addEventListener("DOMContentLoaded", () => {
       renderTasks();
       renderCompletedTasks();
     }
+
+    // Checkbox changes
+    if (e.target.classList.contains("task-checkbox")) {
+      const index = parseInt(e.target.dataset.index);
+      if (!isNaN(index)) {
+        if (e.target.checked) {
+          const task = tasks[index];
+          completedTasks.push(task);
+          tasks.splice(index, 1);
+        } else {
+          const task = completedTasks[index];
+          tasks.push(task);
+          completedTasks.splice(index, 1);
+        }
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+        renderTasks();
+        renderCompletedTasks();
+      }
+    }
+
+    // Delete button
+    const deleteButton = e.target.closest(".delete-task");
+    if (deleteButton) {
+      const index = parseInt(deleteButton.dataset.index);
+      if (!isNaN(index)) {
+        const isCompletedTask = deleteButton.closest("#completed-taskList");
+        if (isCompletedTask) {
+          completedTasks.splice(index, 1);
+          localStorage.setItem(
+            "completedTasks",
+            JSON.stringify(completedTasks),
+          );
+        } else {
+          tasks.splice(index, 1);
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+        renderTasks();
+        renderCompletedTasks();
+      }
+    }
+
+        // Edit button
+        const editButton = e.target.closest(".edit-task");
+        if (editButton) {
+          const index = parseInt(editButton.dataset.index);
+          if (!isNaN(index)) {
+            const isCompletedTask = editButton.closest("#completed-taskList");
+            const task = isCompletedTask ? completedTasks[index] : tasks[index];
+            showEditTaskForm(task, index, isCompletedTask);
+          }
+        }
+    
+        // Ellipsis button to show/hide options
+        const ellipsis = e.target.closest(".ellipsis");
+        if (ellipsis) {
+          document.querySelectorAll(".options").forEach((option) => {
+            if (option !== ellipsis.parentElement.querySelector(".options")) {
+              option.classList.add("hidden");
+            }
+          });
+    
+          const options = ellipsis.parentElement.querySelector(".options");
+          if (options) {
+            options.classList.toggle("hidden");
+          }
+        } else {
+          document.querySelectorAll(".options").forEach((option) => {
+            option.classList.add("hidden");
+          });
+        }
   });
 
   // Initial rendering of tasks
