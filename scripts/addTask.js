@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="flex flex-col gap-4 p-4">
                     <input type="text" placeholder="نام تسک" id="edit-task-title" class="text-date-color-light text-[14px] focus:outline-none md:text-[16px] dark:text-white" value="${task.title}" />
                     <input type="text" placeholder="توضیحات" id="edit-task-description" class="text-task-creation-description-light text-[12px] focus:outline-none md:text-[14px]" value="${task.description}" />
-                    <div class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]" id="edit-tags-right">
+                    <div class="border-task-border-light text-task-creation-description-light my-6 flex w-max gap-0.5 rounded-[4px] border px-2 py-1 text-[12px]" id="tags-right">
                         <a href="#"><img src="./assets/images/tag-right.svg" alt="tags" /></a>
                         <span class="text-[12px] md:text-[14px]">تگ ها</span>
                     </div>
