@@ -672,6 +672,11 @@
       flex-direction: row;
     }
   }
+  .md\:bg-\[\#fff\] {
+    @media (width >= 48rem) {
+      background-color: #fff;
+    }
+  }
   .md\:py-16 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 16);
@@ -702,6 +707,12 @@
   .md\:text-\[16px\] {
     @media (width >= 48rem) {
       font-size: 16px;
+    }
+  }
+  .md\:shadow-aside {
+    @media (width >= 48rem) {
+      --tw-shadow: var(--tw-shadow-color, rgba(100, 100, 111, 0.2)) 0px 7px 29px 0px;
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .lg\:my-12 {
@@ -871,6 +882,13 @@
     &:where(.dark, .dark *) {
       --tw-shadow: 0 0 #0000;
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .md\:dark\:bg-\[\#091120\] {
+    @media (width >= 48rem) {
+      &:where(.dark, .dark *) {
+        background-color: #091120;
+      }
     }
   }
 }
