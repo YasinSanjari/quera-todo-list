@@ -351,21 +351,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Checkbox toggle
     document.body.addEventListener("click", (e) => {
       if (e.target.classList.contains("task-checkbox")) {
-        const listItem = e.target.closest('li');
+        const listItem = e.target.closest("li");
         if (!listItem) return;
-    
-        const isCompletedList = listItem.closest('#completed-taskList') !== null;
+
+        const isCompletedList =
+          listItem.closest("#completed-taskList") !== null;
         const taskArray = isCompletedList ? completedTasks : tasks;
         const targetArray = isCompletedList ? tasks : completedTasks;
-        const index = Array.from(listItem.parentNode.children).indexOf(listItem);
-        
+        const index = Array.from(listItem.parentNode.children).indexOf(
+          listItem,
+        );
+
         if (index >= 0 && index < taskArray.length) {
           const task = taskArray[index];
-          targetArray.push(task); 
+          targetArray.push(task);
           taskArray.splice(index, 1);
-    
+
           localStorage.setItem("tasks", JSON.stringify(tasks));
-          localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+          localStorage.setItem(
+            "completedTasks",
+            JSON.stringify(completedTasks),
+          );
           renderTasks();
           renderCompletedTasks();
         }
@@ -444,8 +450,16 @@ document.addEventListener("DOMContentLoaded", () => {
               alert("لطفا عنوان و توضیحات را وارد کنید");
               return;
             }
+            const taskPriority = localStorage.getItem("selectedPriority");
+
             task.title = newTitle;
             task.description = newDescription;
+            task.priority = taskPriority;
+
+            if (!newTitle || !newDescription || !taskPriority) {
+              alert("لطفا تمام فیلدها را پر کنید و اولویت را انتخاب نمایید");
+              return;
+            }
 
             if (isCompletedTask) {
               localStorage.setItem(
